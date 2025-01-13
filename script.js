@@ -31,7 +31,7 @@ function operate(a, b, c) {
 	}
 }
 
-function clear () {
+function clear() {
 	number1 = ""
 	number2 = ""
 	operator = ""
@@ -46,11 +46,22 @@ buttons.addEventListener("click", (event) => {
 	const element = event.target.textContent
 	if (element.length > 3) return
 
-	// numbers
+	// number
 	if (operator == "") {
-		if (element.match(/[12345678900]/) != null) {
-			number1 == 0 ? number1 = element : number1 += element
+		//number1
+		if (element.match(/[1234567890]/) != null) {
+			if (number1.charAt(0) == "0" && number1.charAt(1) != ".") {
+				number1 = element
+			} else {
+				if (number1.charAt(0) == "-" && number1.charAt(1) == "0" && number1.charAt(2) != ".") {
+					number1 = element
+				} else {
+					number1 += element
+				}
+			}
 		}
+
+		// number1 decimals
 		if (element.match(/\./) != null && number1.match(/\./) == null) {
 			if (number1 == "") {
 				number1 = "0"
@@ -61,22 +72,57 @@ buttons.addEventListener("click", (event) => {
 		}
 		display.textContent = number1
 	} else {
-		if (element.match(/[12345678900]/) != null) {
-			number2 == 0 ? number2 = element : number2 += element
+		//number2
+		if (element.match(/[1234567890]/) != null) {
+			if (number2.charAt(0) == "0" && number2.charAt(1) != ".") {
+				number2 = element
+			} else {
+				if (number2.charAt(0) == "-" && number2.charAt(1) == "0" && number2.charAt(2) != ".") {
+					number2 = element
+				} else {
+					number2 += element
+				}
+			}
 		}
-		if (element.match(/\./) != null && number2.match(/\./) != null) {
-			number2 += element
+
+		//number2 decimals
+		if (element.match(/\./) != null && number2.match(/\./) == null) {
+			if (number2 == "") {
+				number2 = "0"
+				number2 += element
+			} else {
+				number2 += element
+			}
 		}
+
+		//display
 		display.textContent = number1 + operator + number2
 	}
 
 	// operators
-	if (element.match(/[-+/*]/) != null) {
-		if (number1 == "") {
-			alert("Invalid syntax")
-		} else {
+	if (element.match(/[-+/*]/) != null && element != "+/-") {
+		if (number1 != "") {
 			operator = element
-			display.textContent = number1 + operator			
+			display.textContent = number1 + operator
+		}
+	}
+
+	// change +/-
+	if (element == "+/-") {
+		if (operator == "") {
+			if (number1.charAt(0) == "-") {
+				number1 = number1.substring(1)
+			} else {
+				number1 = "-" + number1
+			}
+			display.textContent = number1
+		} else {
+			if (number2.charAt(0) == "-") {
+				number2 = number2.substring(1)
+			} else {
+				number2 = "-" + number2
+			}
+			display.textContent = number1 + operator + number2
 		}
 	}
 
@@ -87,9 +133,7 @@ buttons.addEventListener("click", (event) => {
 
 	// operate
 	if (element == "=") {
-		if (number1 == "" || operator == "" || number2 == "") {
-			alert("Invalid syntax")
-		} else {
+		if (number1 != "" && operator != "" && number2 != "") {
 			number1 = parseFloat(number1)
 			number2 = parseFloat(number2)
 			const result = operate(number1, number2, operator)
