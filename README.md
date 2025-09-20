@@ -11,12 +11,6 @@ Inspired by project structure and style from a To-Do List app by C0deBunny.
 - [Features](#features)  
 - [Demo](#demo)  
 - [Installation](#installation)  
-- [Usage](#usage)  
-- [Project Structure](#project-structure)  
-- [Technologies Used](#technologies-used)  
-- [Future Enhancements](#future-enhancements)  
-- [Contributing](#contributing)  
-- [License](#license)  
 
 ---
 
