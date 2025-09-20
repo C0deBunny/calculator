@@ -1,10 +1,49 @@
-# calculator
+# Calculator
 
-- [calculator](#calculator)
-    - [Description](#description)
+A simple, interactive calculator web app built with HTML, CSS, and JavaScript.  
+Inspired by project structure and style from a To-Do List app by C0deBunny.  
 
-### Description
+---
 
-This project was made to practice with HTML, CSS and Javascript to make a functional calculator with styling.
+## Table of Contents
 
-Color palette used: https://colorhunt.co/palette/0926351b42425c83749ec8b9
+- [Overview](#overview)  
+- [Features](#features)  
+- [Demo](#demo)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Project Structure](#project-structure)  
+- [Technologies Used](#technologies-used)  
+- [Future Enhancements](#future-enhancements)  
+- [Contributing](#contributing)  
+- [License](#license)  
+
+---
+
+## Overview
+
+This project functions as a basic calculator, enabling users to perform arithmetic operations: addition, subtraction, multiplication, and division. The aim is to practise DOM manipulation, event handling, and clean UI design, similarly to how the To-Do List project was structured.
+
+---
+
+## Features
+
+- Basic operations: `+`, `−`, `×`, `÷`  
+- Decimal input support  
+- Clear / reset button  
+- Chaining operations (e.g. entering “5 + 3 × 2”)  
+- Responsive layout — works across desktop and mobile  
+
+---
+
+## Demo
+
+*(Insert link to live demo or screenshot here)*
+
+---
+
+## Installation
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/C0deBunny/calculator.git
