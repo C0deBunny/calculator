@@ -32,7 +32,7 @@ This project functions as a basic calculator, enabling users to perform arithmet
 
 ## Demo
 
-*(Insert link to live demo or screenshot here)*
+Check out the live demo here: [Calculator on GitHub Pages](https://c0debunny.github.io/calculator/)
 
 ---
 
